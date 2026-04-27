@@ -314,13 +314,29 @@ tm_shape(connections_sf)+
 
 # Export
 ```{r}
-st_write(connections_sf, "Data/Outputs/Shapefiles for dashboard/20260423_connections.shp", delete_dsn = T)
+st_write(connections_sf, "Data/Outputs/Shapefiles for dashboard/20260427_connections.shp", delete_dsn = T)
 
-st_write(systems_sf, "Data/Outputs/Shapefiles for dashboard/20260423_systems.shp", delete_dsn = T)
+st_write(systems_sf, "Data/Outputs/Shapefiles for dashboard/20260427_systems.shp", delete_dsn = T)
 
-st_write(jittered_sources, "Data/Outputs/Shapefiles for dashboard/20260423_sources.shp", delete_dsn = T)
+st_write(jittered_sources, "Data/Outputs/Shapefiles for dashboard/20260427_sources.shp", delete_dsn = T)
 ```
 
 
 
+```{r}
+#st_read("Data/Outputs/Shapefiles for dashboard/20260423_connections.shp")%>%
+connections_sf%>%
+  data.frame()%>%
+  filter(grepl("Alpine Springs County Water District Spring 01", source_name, ignore.case = T))%>%
+  select(source_name, source_lon, source_lat)
+
+#st_read("Data/Outputs/Shapefiles for dashboard/20260423_sources.shp")%>%
+jittered_sources%>%
+  filter(grepl("Alpine Springs County Water District Spring 01", source_name, ignore.case = T))%>%
+  select(source_name)%>%
+  mutate(source_lon = st_coordinates(.)[,1],
+         source_lat = st_coordinates(.)[,2])%>%
+  data.frame()
+  #select(sorc_nm, sorc_lt, sorc_ln)
+```
 
