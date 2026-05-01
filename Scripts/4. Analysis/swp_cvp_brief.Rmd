@@ -70,6 +70,7 @@ paste("# of systems indirectly served by CVP:", nrow(combined%>%filter(cvp == 1)
 
 paste("# of systems served by both:", nrow(combined%>%filter(cvp == 1 & swp == 1)))
 ```
+
 ## Population served
 ```{r}
 paste("pop served by any project:", sum(combined%>%filter(any_project == 1)%>%pull(pop_served), na.rm = T))
@@ -97,6 +98,7 @@ median(combined%>%filter(cvp == 1)%>%pull(pop_served), na.rm = T)
 mean(combined%>%filter(cvp == 1)%>%pull(pop_served), na.rm = T)
 max(combined%>%filter(cvp == 1)%>%pull(pop_served), na.rm = T)
 ```
+
 ## MHI by project
 ```{r}
 paste("Median MHI across CVP systems:", median(combined%>%filter(cvp == 1)%>%pull(mhi), na.rm = T))
