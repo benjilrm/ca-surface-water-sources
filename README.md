@@ -1,6 +1,8 @@
 # Overview
 This repository compiles Consumer Confidence Reports and Urban Water Management Plans into a dataset of surface water sources, sales and transfers for California community water systems. Additional variables related to public water systems, surface water sources, and surface water sales/transfers were joined and/or calculated using further datasets (see 'External Data Sources' below). The final dataset was converted into both an igraph object (facilitating network analysis on the dataset--see subfolder '4. Analysis') and into shapefiles (one for each of systems, sources, and connections) for upload to an interactive dashboard in ArcGIS Online, which you can find [here](https://bit.ly/CA_watersources_network). 
 
+For further infrmation on methodology, data sources, and the variables in the final processed dataset, please see the Supplemental Data Documentation linked [here](https://docs.google.com/document/d/189OF5rqQSb2CFYDXUSJb0KPLgYTfg7ua34_v-jvnDzo/edit?tab=t.0)
+
 # Structure and Navigation
 The 'Scripts/' folder contains all relevant code. Run scripts based on numerical order of subfolders (and of scripts within folders). When unnumbered within a folder, scripts can be run in any given order.
 
@@ -35,8 +37,7 @@ Scripts/
 Please see the Supplemental Data Documentation document linked [here](https://docs.google.com/document/d/189OF5rqQSb2CFYDXUSJb0KPLgYTfg7ua34_v-jvnDzo/edit?tab=t.0) for more information on methodology and where to locate these datasets and how we utilised them.
 
 SAFER Clearinghouse data
-- This is an internal State Water Board dataset they shared with us for this project. All documentation is located in [this Google Drive folder](https://drive.google.com/drive/folders/1gxMrGeaOA_xtGb1zf97Z79EFEwKcIpCG).
-- Unfortunately there is no data dictionary, but [Jenny has worked on developing one](https://docs.google.com/spreadsheets/d/1ulStajU7D1eFu2m3V0fTDtcm3PGNlneX/edit?gid=631545570#gid=631545570).
+- This is an internal State Water Board dataset shared with us for this project
 - 'SourceReporting' sheet used for geolocation data missing_source_lat_longs.Rmd, as well as to identify groundwater facilities in master_cleaning_and_join.Rmd
 - 'WaterSystemInformation' sheet used to filter for only facilities in community water systems in master_cleaning_and_join.Rmd
 
@@ -57,4 +58,3 @@ EPA SDWIS
 - Contains data on each system's population served, wholesale provider, status, etc.
 - Joined into main dataset by PWSID
 
-Data dictionary for new columns [here](https://docs.google.com/spreadsheets/d/11Wzbw_Jr1k-WxoZu8n-r0eJ0FcPlr-ldpthPKmB1gL0/edit?gid=0#gid=0)
