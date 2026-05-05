@@ -24,7 +24,7 @@ options(scipen = 999)
 
 Most recent version of network data
 ```{r}
-network_data = read.csv("Data/Outputs/20260423_network_joined.csv")%>%
+network_data = read.csv("Data/Outputs/20260505_network_joined.csv")%>%
   select(pwsid, swp_loop, cvp_loop, swp_direct, cvp_direct, pop_served)%>%
   rename(swp = swp_loop, cvp = cvp_loop)%>%
   mutate(any_project = ifelse(swp == 1 | cvp == 1, 1, 0),
